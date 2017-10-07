@@ -55,11 +55,14 @@ class Controller
     old_recipe.name = new_attributes[:name]
     old_recipe.description = new_attributes[:description]
 
+    # It's not needed to update the array since by updating the object the array is also updated automatically
+    # Since what is inside the array is a pointer to the object and not a copy of the object
     # remove it from the array
-    @cookbook.remove_recipe(id)
-
+    # @cookbook.remove_recipe(id)
     # add the new version
-    @cookbook.add_recipe(old_recipe, id)
+    # @cookbook.add_recipe(old_recipe, id)
+
+    @cookbook.save_to_csv
 
     # list
     list

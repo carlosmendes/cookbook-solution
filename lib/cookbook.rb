@@ -35,7 +35,6 @@ class Cookbook # Repository, Fake Database
     save_to_csv
   end
 
-  private
 
   def save_to_csv
     CSV.open(@csv_file, 'w') do |csv|
@@ -44,6 +43,8 @@ class Cookbook # Repository, Fake Database
       end
     end
   end
+
+  private
 
   def load_csv
     return unless File.exist?(@csv_file)
